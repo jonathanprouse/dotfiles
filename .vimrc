@@ -7,7 +7,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set number
-set relativenumber
+set paste
+"set relativenumber
 set ignorecase
 set smartcase
 
@@ -23,9 +24,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+"Remap Ctrl+P to previous command-line command
+:noremap <C-P> @:<CR>
+
 " Forked tpozzi/Sidonia:
 " github.com/jonathanprouse/Sidonia
-colorscheme sidonia
+colorscheme ron
 
 " github.com/Townk/vim-autoclose
 helptags ~/.vim/bundle/vim-autoclose/doc
@@ -37,7 +41,7 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 " YouCompleteMe
-" github.com/Valloric/YouCopmleteMe
+" github.com/Valloric/YouCompleteMe
 let g:ycm_server_python_interpreter = '/usr/bin/python'
 let g:loaded_youcompleteme = 1 " Disabled for now
 
@@ -63,3 +67,10 @@ function! VimwikiLinkHandler(link)
     return 1
   endif
 endfunction
+
+" Setting syntax highlighting
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'erlang': 'erlang'}
+let g:vimwiki_list = [wiki]
+
