@@ -1,0 +1,6 @@
+.idea/
+*.iml
+.tfsec/cache/
+*/.tfsec/cache/
+.tfsec/action_tfchecks.yaml
+.terraform/
