@@ -1,0 +1,28 @@
+[user]
+	name = Jonathan Prouse
+	email = jonathan@gameanalytics.com
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+[core]
+	editor = gedit
+	excludesFile = /home/jonathan/.gitignore_global
+[alias]
+	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+  diffall = difftool -d --no-symlinks
+[merge]
+	tool = bcompare
+[mergetool "bc3"]
+	trustExitCode = true
+[diff]
+	tool = bcompare
+[url "ssh://git@github.com"]
+  insteadOf = https://github.com
+[url "git@github.com:"]
+  insteadOf = https://github.com
+  insteadOf = https://github.com/
+  insteadOf = git://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
